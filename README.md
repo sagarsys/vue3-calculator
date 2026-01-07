@@ -1,5 +1,6 @@
 # Vue 3 calculator
 Simple calculator made with Vue 3, Typescript and Vite
+
 [<img src="public/screenshot.png" height="400" />](public/screenshot.png)
 
 ## Quick Start
