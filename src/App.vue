@@ -80,8 +80,10 @@ const calculate = () => {
   <div class="bg-slate-700 max-w-100 m-4 p-4 rounded-lg">
     <input
       type="text"
-      class="w-[95%] text-right border text-white my-2 py-4 px-8 mx-2 font-bold"
+      class="w-[95%] text-right border bg-gray-600 text-white my-2 py-4 px-8 mx-2 font-bold"
       v-model="displayed"
+      readonly
+      disabled
     />
     <div class="grid grid-cols-4 gap-2">
       <div class="grid col-span-3 grid-cols-3 gap-2 px-4 py-8">
@@ -100,11 +102,15 @@ const calculate = () => {
           class="p-2 text-white border w-25 mb-2"
           v-for="operator in operators"
           :key="operator"
+          :class="operator === 'AC' ? 'bg-rose-900' : 'bg-cyan-800'"
           @click="() => onOperatorClick(operator)"
         >
           {{ operator }}
         </button>
-        <button class="p-2 text-white border w-25 mb-2" @click="calculate">
+        <button
+          class="p-2 text-white border w-25 mb-2 bg-green-700"
+          @click="calculate"
+        >
           =
         </button>
       </div>
